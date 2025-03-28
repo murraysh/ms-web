@@ -25,5 +25,4 @@ spec:
           mountPath: /usr/share/nginx/html/data
       volumes:
       - name: ms-web-data
-        persistentVolumeClaim:
-          claimName: ms-web-pvc
+        emptyDir: {}
