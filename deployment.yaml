@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ms-web
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: ms-web
