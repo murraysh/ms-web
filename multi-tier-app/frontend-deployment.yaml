@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: your-frontend-image
+        image: paulbouwer/hello-kubernetes:1.7
         ports:
         - containerPort: 80
