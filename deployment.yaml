@@ -11,12 +11,19 @@ spec:
     metadata:
       labels:
         app: ms-web
-  spec:
-  containers:
-  - name: ms-web-container
-    image: nginx:latest
-    resources:
-      requests:
-        cpu: "100m"
-      limits:
-        cpu: "200m"
+    spec:
+      containers:
+      - name: ms-web-container
+        image: nginx:latest
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            cpu: "200m"
+        volumeMounts:
+        - name: ms-web-data
+          mountPath: /usr/share/nginx/html/data
+      volumes:
+      - name: ms-web-data
+        persistentVolumeClaim:
+          claimName: ms-web-pvc
